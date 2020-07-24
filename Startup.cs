@@ -69,7 +69,7 @@ namespace TaskAPI
                 }
                 catch (MySqlException)
                 {
-                    Thread.Sleep((int)Math.Pow(2, retries) * 1000);
+                    Thread.Sleep((int)Math.Pow(2, retries) * 5000);
                     retries++;
                 }
             }
