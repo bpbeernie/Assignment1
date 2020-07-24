@@ -29,7 +29,7 @@ namespace TaskAPI
 
             services.AddDbContext<TaskContext>(options => 
             options.UseSqlServer(
-                $"Server={server},{port};Initial Catalog={database};User ID={user};Password={password}"));
+                $"Server={server},{port};Initial Catalog={database};User ID={user};Password={password};Connection Timeout=60;Trusted_Connection=False;"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
