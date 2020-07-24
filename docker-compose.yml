@@ -7,23 +7,23 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: Password123_
             MYSQL_DATABASE: Tasks
-            MYSQL_USER: dbuser
-            MYSQL_PASSWORD: dbuserpassword
         networks:
             - assignmentnetwork
         restart: always
+        ports:
+            - 3305:3306
     taskapi:
         build: .
         image: bpbeernie/taskapi
         ports:
-            - "8080:80"
+            - "5003:80"
         depends_on:
             - db
         environment:
             DBServer: "db"
             DBPort: "3306"
-            DBUser: "dbuser"
-            DBPassword: "dbuserpassword"
+            DBUser: "root"
+            DBPassword: "Password123_"
             Database: "Tasks"
         networks:
             - assignmentnetwork
