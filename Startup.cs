@@ -30,7 +30,7 @@ namespace TaskAPI
 
             services.AddDbContext<TaskContext>(options => 
             options.UseMySql(
-                $"Server={server},{port};Database={database};User ID={user};Password={password};"));
+                $"Server={server};Database={database};User ID={user};Password={password};"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
