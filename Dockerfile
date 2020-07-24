@@ -10,11 +10,11 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 # build runtime image
-FROM microsoft/dotnet:2.1-aspnetcore-runtime
+FROM microsoft/dotnet:2.1-sdk
 WORKDIR /app
 COPY --from=build-env /app/out .
 COPY entrypoint.sh .
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ENTRYPOINT ["dotnet", "TasksWebService.dll"]
 
 EXPOSE 80/tcp
 RUN chmod +x ./entrypoint.sh
