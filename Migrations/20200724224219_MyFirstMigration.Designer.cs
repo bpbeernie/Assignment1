@@ -9,7 +9,7 @@ using TasksWebService.Models;
 namespace TasksWebService.Migrations
 {
     [DbContext(typeof(TaskContext))]
-    [Migration("20200724180923_MyFirstMigration")]
+    [Migration("20200724224219_MyFirstMigration")]
     partial class MyFirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
