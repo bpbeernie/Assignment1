@@ -19,8 +19,6 @@ namespace TaskAPI.Models
 
         public static void SeedData(TaskContext context)
         {
-            context.Database.EnsureCreated();
-
             System.Console.WriteLine("Applying Migrations...");
 
             context.Database.Migrate();
