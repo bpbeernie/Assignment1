@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,8 +29,8 @@ namespace TaskAPI
             var database = Configuration["Database"];
 
             services.AddDbContext<TaskContext>(options => 
-            options.UseSqlServer(
-                $"Server={server},{port};Initial Catalog={database};User ID={user};Password={password};Connection Timeout=60;Trusted_Connection=False;"));
+            options.UseMySql(
+                $"Server={server},{port};Database={database};User ID={user};Password={password};"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
