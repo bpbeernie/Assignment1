@@ -26,8 +26,6 @@ services:
             - assignmentnetwork
 volumes:
     sqlvolume:
-        name: sqlvolume
 networks:
     assignmentnetwork:
         driver: bridge
-        name: assignmentnetwork
