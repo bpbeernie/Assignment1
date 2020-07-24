@@ -1,0 +1,25 @@
+﻿version: "3"
+services:
+    mssqlserver:
+        image: "mcr.microsoft.com/mssql/server"
+        volumes:
+           - sqlvolume:/var/opt/mssql
+        environment:
+            SA_PASSWORD: "Password123_"
+            ACCEPT_EULA: "Y"
+        networks:
+          - assignmentnetwork
+    taskapi:
+        build: .
+        ports:
+            - "8080:80"
+        depends_on:
+            - ms-sql-server
+        environment:
+            DBServer: "mssqlserver"
+            DBPort: "1433"
+            DBUser: "SA"
+            DBPassword: "Password123_"
+            Database: "Colors"
+        networks:
+            - assignmentnetwork
