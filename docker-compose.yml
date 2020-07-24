@@ -15,12 +15,12 @@ services:
         ports:
             - "8080:80"
         depends_on:
-            - ms-sql-server
+            - mssqlserver
         environment:
             DBServer: "mssqlserver"
             DBPort: "1433"
             DBUser: "SA"
             DBPassword: "Password123_"
-            Database: "Colors"
+            Database: "Tasks"
         networks:
             - assignmentnetwork
