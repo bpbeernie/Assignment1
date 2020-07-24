@@ -7,6 +7,7 @@ services:
         environment:
             SA_PASSWORD: "Password123_"
             ACCEPT_EULA: "Y"
+            MSSQL_PID: Express
         networks:
           - assignmentnetwork
     taskapi:
