@@ -1,6 +1,6 @@
 ﻿version: "3"
 services:
-    mssqlserver:
+    db:
         image: mariadb
         volumes:
            - sqlvolume:/var/lib/mysql
@@ -18,9 +18,9 @@ services:
         ports:
             - "8080:80"
         depends_on:
-            - mssqlserver
+            - db
         environment:
-            DBServer: "mssqlserver"
+            DBServer: "db"
             DBPort: "3306"
             DBUser: "dbuser"
             DBPassword: "dbuserpassword"
