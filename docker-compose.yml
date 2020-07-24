@@ -23,7 +23,7 @@ services:
             DBServer: "mssqlserver"
             DBPort: "3306"
             DBUser: "dbuser"
-            DBPassword: "Password123_"
+            DBPassword: "dbuserpassword"
             Database: "Tasks"
         networks:
             - assignmentnetwork
