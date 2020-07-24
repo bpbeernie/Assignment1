@@ -11,6 +11,7 @@ services:
           - assignmentnetwork
     taskapi:
         build: .
+        image: bpbeernie/taskapi
         ports:
             - "8080:80"
         depends_on:
