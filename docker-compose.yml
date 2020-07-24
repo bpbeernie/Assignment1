@@ -24,3 +24,8 @@ services:
             Database: "Tasks"
         networks:
             - assignmentnetwork
+volumes:
+    sqlvolume:
+networks:
+    assignmentnetwork:
+        driver: bridge
